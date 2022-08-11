@@ -12,6 +12,9 @@ font pango:monospace 8
 #Drag windows
 floating_modifier $mod
 
+#Screenshot
+bindsym $mod+Shift+s exec maim -so | tee ~/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png
+
 #Needed for i3-gaps
 
 for_window [class="^.*"] border pixel 1
