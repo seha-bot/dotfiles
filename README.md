@@ -1,4 +1,3 @@
 # Packages
-pacman: i3-gaps ranger neofetch urxvt polybar compton rofi xorg xorg-xinit xclip nitrogen maim<br />
-aur: termsyn-font<br />
-optional: mps-youtube mplayer
+pacman: i3-gaps ranger neofetch urxvt polybar compton rofi xorg xorg-xinit xclip nitrogen maim mps-youtube mplayer<br />
+aur: termsyn-font pipes.sh
