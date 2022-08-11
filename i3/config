@@ -19,14 +19,10 @@ bindsym $mod+Shift+s exec maim -so | tee ~/Screenshots/$(date +%s).png | xclip -
 
 for_window [class="^.*"] border pixel 1
 
-#smart_borders on
+smart_borders on
 
 gaps inner 20
 gaps outer 25
-
-for_window [title="^Nitrogen"] floating enable
-for_window [title="^Lxappearance"] floating enable
-for_window [title="^Mpv"] floating enable
 
 bindsym $mod+z          gaps outer current plus 5
 bindsym $mod+Shift+z    gaps outer current minus 5
