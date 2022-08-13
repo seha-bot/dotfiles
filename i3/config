@@ -30,8 +30,8 @@ bindsym $mod+Shift+z    gaps outer current minus 5
 #brightness
 #USE THIS TO GET DISPLAY ID
 #xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1
-bindsym $mod+l exec xbacklight -dec 10
-bindsym $mod+k exec xbacklight -inc 10
+bindsym $mod+u exec xbacklight -dec 10
+bindsym $mod+Shift+u exec xbacklight -inc 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -77,8 +77,8 @@ bindsym $mod+Shift+q kill
 
 # change focus
 bindsym $mod+j focus left
-#bindsym $mod+k focus down
-#bindsym $mod+l focus up
+bindsym $mod+k focus down
+bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
