@@ -5,7 +5,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id compton --xrender-sync-fence
 exec --no-startup-id nitrogen --restore
 exec xrdb -merge ~/.config/.Xresources
-bindsym $mod+d exec rofi -show-icons -icon-theme "Papirus" -show drun -font "FantasqueSansMono NF Bold 14" -theme miami
+bindsym $mod+d exec rofi -show run
 
 font pango:monospace 8
 
