@@ -6,6 +6,7 @@ exec --no-startup-id compton --xrender-sync-fence
 exec --no-startup-id nitrogen --restore
 exec xrdb -merge ~/.config/.Xresources
 bindsym $mod+d exec rofi -show run
+bindsym $mod+Shift+d exec ~/.config/search.sh
 
 font pango:monospace 8
 
