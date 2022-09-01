@@ -3,7 +3,7 @@ set $mod Mod4
 exec_always "setxkbmap -layout ba"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id compton --xrender-sync-fence
-exec --no-startup-id nitrogen --restore
+exec --no-startup-id feh --bg-scale .config/wallpaper.jpg
 exec xrdb -merge ~/.config/.Xresources
 bindsym $mod+d exec rofi -show run
 bindsym $mod+Shift+d exec ~/.config/search.sh
@@ -31,12 +31,12 @@ bindsym $mod+Shift+z    gaps outer current minus 5
 #brightness
 #USE THIS TO GET DISPLAY ID
 #xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1
-#bindsym $mod+u exec xbacklight -dec 10
-#bindsym $mod+Shift+u exec xbacklight -inc 10
+bindsym $mod+u exec xbacklight -dec 10
+bindsym $mod+Shift+u exec xbacklight -inc 10
 
 #brightness for external monitors
-bindsym $mod+u exec /home/seha/.config/backlight.sh -10
-bindsym $mod+Shift+u exec /home/seha/.config/backlight.sh 10
+#bindsym $mod+u exec /home/seha/.config/backlight.sh -10
+#bindsym $mod+Shift+u exec /home/seha/.config/backlight.sh 10
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
