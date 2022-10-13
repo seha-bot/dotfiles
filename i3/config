@@ -5,6 +5,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id compton --xrender-sync-fence
 exec --no-startup-id feh --bg-scale .config/wallpaper.jpg
 exec xrdb -merge ~/.config/.Xresources
+exec xrandr --output $(xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1) --set TearFree on
 bindsym $mod+d exec rofi -show run
 bindsym $mod+Shift+d exec ~/.config/search.sh
 
