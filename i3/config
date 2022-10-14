@@ -36,8 +36,8 @@ bindsym $mod+Shift+z    gaps outer current minus 5
 #bindsym $mod+Shift+u exec xbacklight -inc 10
 
 #brightness for external monitors
-bindsym $mod+u exec /home/seha/.config/backlight.sh -10
-bindsym $mod+Shift+u exec /home/seha/.config/backlight.sh 10
+bindsym $mod+u exec brightnessctl s 10-
+bindsym $mod+Shift+u exec brightnessctl s +10
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
