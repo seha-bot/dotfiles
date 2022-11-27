@@ -2,8 +2,8 @@ set $mod Mod4
 
 exec_always "setxkbmap -layout ba"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id compton --xrender-sync-fence
-exec --no-startup-id feh --bg-scale .config/wallpaper.jpg
+exec --no-startup-id picom &
+exec --no-startup-id feh --bg-scale .config/wallpaper.png
 exec xrdb -merge ~/.config/.Xresources
 exec xrandr --output $(xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1) --set TearFree on
 bindsym $mod+d exec rofi -show run
@@ -18,14 +18,9 @@ floating_modifier $mod
 bindsym $mod+Shift+s exec maim -s | tee ~/screenshots/$(date +%s).png | xclip -selection clipboard -t image/png
 
 #Needed for i3-gaps
-
-for_window [class="^.*"] border pixel 1
-
 smart_borders on
-
 gaps inner 20
 gaps outer 25
-
 bindsym $mod+z          gaps outer current plus 5
 bindsym $mod+Shift+z    gaps outer current minus 5
 
@@ -198,11 +193,28 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# class                 border  bground text    indicator child_border
-client.focused          #555555 #555555 #fcc000 #4f4f4f   #fcc000
-#client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #fcc000
-#client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #fcc000
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+# -- COLORS
+set $black   #282828
+set $black2  #404040
+set $red     #cc241d
+set $green   #98971a
+set $yellow  #d79921
+set $blue    #458588
+set $magenta #b16286
+set $cyan    #689d6a
+set $white   #a89984
+set $white2  #ebdbb2
 
-client.background       #F8F8F2
+# -- DECOR CONFIG
+# class                     border      backg       text        indicator
+client.focused              $black2     $black2     $white      $black2
+client.focused_inactive     $black      $black      $white      $black
+client.unfocused            $black      $black      $magenta    $black
+client.urgent               $red        $red        $black      $red
+
+# -- BORDER THICKNESS
+for_window [class="^.*"] border pixel 3
+
+# -- DISABLE FOCUS FOR POP-UPS
+no_focus [window_role="pop-up"]
+
