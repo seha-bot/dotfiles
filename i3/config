@@ -19,8 +19,8 @@ bindsym $mod+Shift+s exec maim -s | tee ~/screenshots/$(date +%s).png | xclip -s
 
 #Needed for i3-gaps
 smart_borders on
-gaps inner 20
-gaps outer 25
+gaps inner 10
+gaps outer 15
 bindsym $mod+z          gaps outer current plus 5
 bindsym $mod+Shift+z    gaps outer current minus 5
 
