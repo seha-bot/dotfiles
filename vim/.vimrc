@@ -15,9 +15,11 @@ inoremap <C-s>" ""<Left>
 inoremap <C-s>' ''<Left>
 
 nnoremap <F5> :w<Return>:exe "!cd " .. expand("%:p:h") .. " && ./start.sh"<Return>
+nnoremap <F2> :LspRename<Return>
 
 set shiftwidth=4 smarttab
 set expandtab
 set tabstop=8 softtabstop=0
 set belloff=all
+set clipboard=unnamedplus
 
