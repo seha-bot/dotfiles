@@ -10,7 +10,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 inoremap <C-s>[ []<Left>
 inoremap <C-s>( ()<Left>
-inoremap <C-s>{ {}<Left>
+inoremap <C-s>{ {}<Left><Return><Up><Right>
 inoremap <C-s>" ""<Left>
 inoremap <C-s>' ''<Left>
 
