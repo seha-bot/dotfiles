@@ -62,7 +62,7 @@ live_config_reload: true
 ##################################################
 
 import:
-  - ~/.config/alacritty/themes/themes/tomorrow_night_bright.yaml
+  - ~/.config/alacritty/dracula.yaml
 
 ##################################################
 
