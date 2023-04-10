@@ -2,8 +2,8 @@
 
 window:
   padding:
-    x: 20
-    y: 20
+    x: 10
+    y: 10
 
   class:
     instance: Alacritty
@@ -24,19 +24,19 @@ scrolling:
 
 font:
   normal:
-    family: Hasklug Nerd Font Mono
+    family: Source Code Pro
     style: Regular
 
   bold:
-    family: Hasklug Nerd Font Mono
+    family: Source Code Pro
     style: Bold
 
   italic:
-    family: Hasklug Nerd Font Mono
+    family: Source Code Pro
     style: Italic
 
   bold_italic:
-    family: Hasklug Nerd Font Mono
+    family: Source Code Pro
     style: Bold Italic
 
   size: 9
@@ -44,75 +44,6 @@ font:
 ##################################################
 
 draw_bold_text_with_bright_colors: true
-
-##################################################
-
-colors:
-  primary:
-    background: '#282828'
-    foreground: '#ebdbb2'
-    dim_foreground: '#928374'
-    bright_foreground: '#ebdbb2'
-
-  cursor:
-    text: '#1d2021'
-    cursor: '#ebdbb2'
-
-  vi_mode_cursor:
-    text: '#1d2021'
-    cursor: '#ebdbb2'
-
-  search:
-    matches:
-      foreground: '#1d2021'
-      background: '#98971a'
-
-    focused_match:
-      foreground: '#1d2021'
-      background: '#fabd2f'
-
-    footer_bar:
-      background: '#b16286'
-      foreground: '#1d2021'
-
-  hints:
-    start:
-      foreground: '#010816'
-      background: '#E99440'
-
-    end:
-      foreground: '#E99440'
-      background: '#010816'
-
-  line_indicator:
-    foreground: None
-    background: None
-
-  selection:
-    text: CellBackground
-    background: CellForeground
-
-  normal:
-    black:   '#1d2021'
-    red:     '#cc241d'
-    green:   '#98971a'
-    yellow:  '#d79921'
-    blue:    '#458588'
-    magenta: '#b16286'
-    cyan:    '#689d6a'
-    white:   '#a89984'
-
-  bright:
-    black:   '#928374'
-    red:     '#fb4934'
-    green:   '#b8bb26'
-    yellow:  '#fabd2f'
-    blue:    '#83a598'
-    magenta: '#d3869b'
-    cyan:    '#8ec07c'
-    white:   '#ebdbb2'
-
-  transparent_background_colors: false
 
 ##################################################
 
@@ -130,7 +61,13 @@ live_config_reload: true
 
 ##################################################
 
+import:
+  - ~/.config/alacritty/themes/themes/tomorrow_night_bright.yaml
+
+##################################################
+
 mouse:
   hide_when_typing: true
 
 ##################################################
+
