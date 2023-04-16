@@ -1,0 +1,6 @@
+set hint-match-element=false
+set hint-keys=123
+
+shortcut-add y=https://youtube.com/
+shortcut-add h=https://duckduckgo.com/
+
