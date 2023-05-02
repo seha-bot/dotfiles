@@ -6,3 +6,6 @@ shortcut-add y=https://youtube.com/
 shortcut-add h=https://duckduckgo.com/
 shortcut-add l=127.0.0.1
 
+nnoremap H <C-O>
+nnoremap L <C-I>
+
