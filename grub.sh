@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Run this script as root.
+# $1 - entire disk (/dev/sda)
+# $2 - efi partition (/dev/sda1)
+
 if [ "$1" = "" ] || [ "$2" = "" ]; then
     echo "Provjeri parametre konju"
     exit 1
