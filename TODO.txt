@@ -1,0 +1,4 @@
+New polybar config
+Window borders
+rofi
+
