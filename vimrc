@@ -43,15 +43,17 @@ let NERDTreeMapActivateNode='f'
 
 inoremap <C-s>[ []<Left>
 inoremap <C-s>( ()<Left>
-inoremap <C-s>{ {}<Left><Return><Up><Right>
+inoremap <C-s>{ {}<Left><cr><Up><Right>
 inoremap <C-s>" ""<Left>
 inoremap <C-s>' ''<Left>
 
-nnoremap <C-f> :LSClientAllDiagnostics<Return>
-nnoremap <F5> :w<Return>:exe "!cd " .. expand("%:p:h") .. " && ./start.sh"<Return>
-nnoremap <F4> :w<Return>:exe "!cd " .. expand("%:p:h") .. "/../ && clear && make && build/main"<Return>
+nnoremap <C-f> :LSClientAllDiagnostics<cr>
+nnoremap <F5> :w<cr>:exe "!cd " .. expand("%:p:h") .. " && ./start.sh"<cr>
+nnoremap <F4> :w<cr>:exe "!cd " .. expand("%:p:h") .. "/../ && clear && make && build/main"<cr>
 nnoremap <C-s> :NERDTreeToggle<cr>
-nnoremap <C-s> :NERDTreeToggle<cr>
+nnoremap <C-m> :below term<cr>
+nnoremap <C-l> :tabnext<cr>
+nnoremap <C-h> :tabprevious<cr>
 
 set number
 set shiftwidth=4 smarttab
