@@ -2,8 +2,8 @@ set $mod Mod4
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id setxkbmap -option caps:swapescape
-exec --no-startup-id picom &
-exec --no-startup-id feh --bg-scale .config/wallpaper.png
+exec --no-startup-id picom --experimental-backend &
+exec --no-startup-id feh --bg-scale .config/wallpaper.jpg
 exec xrdb -merge ~/.config/.Xresources
 exec xrandr --output $(xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1) --set TearFree on
 bindsym $mod+d exec rofi -show run

@@ -2,8 +2,10 @@
 
 window:
   padding:
-    x: 10
-    y: 10
+    x: 5
+    y: 5
+
+  opacity: 0.9
 
   class:
     instance: Alacritty
@@ -39,7 +41,7 @@ font:
     family: Source Code Pro
     style: Bold Italic
 
-  size: 9
+  size: 10
 
 ##################################################
 
@@ -62,7 +64,7 @@ live_config_reload: true
 ##################################################
 
 import:
-  - ~/.config/alacritty/dracula.yaml
+  - ~/.config/alacritty/darkforest.yaml
 
 ##################################################
 
