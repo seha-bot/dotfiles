@@ -54,6 +54,7 @@ nnoremap <C-s> :NERDTreeToggle<cr>
 nnoremap <C-m> :below term<cr>
 nnoremap <C-l> :tabnext<cr>
 nnoremap <C-h> :tabprevious<cr>
+nnoremap <C-c> :tabclose<cr>
 
 set number
 set shiftwidth=4 smarttab
