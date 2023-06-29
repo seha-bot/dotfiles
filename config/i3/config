@@ -1,85 +1,64 @@
 set $mod Mod4
 
+# X config
+exec_always --no-startup-id setxkbmap -option caps:swapescape
+exec_always --no-startup-id xinput set-prop "MSFT0002:00 04F3:31AD Touchpad" "libinput Tapping Enabled" 1
+exec_always --no-startup-id xset r rate 200 40
+exec_always xrandr --output $(xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1) --set TearFree on
+
+# Background apps
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id setxkbmap -option caps:swapescape
-exec --no-startup-id xset r rate 200 40
 exec --no-startup-id picom --experimental-backend &
 exec --no-startup-id feh --bg-scale .config/wallpaper.jpg
-exec xrdb -merge ~/.config/.Xresources
-exec xrandr --output $(xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1) --set TearFree on
 bindsym $mod+d exec rofi -show run
 
-font pango:monospace 8
-
-#Drag windows
-floating_modifier $mod
-
-#Screenshot
+# Screenshot
 bindsym $mod+Shift+s exec maim -s | tee ~/screenshots/$(date +%s).png | xclip -selection clipboard -t image/png
 
-#Needed for i3-gaps
+# Needed for i3-gaps
 smart_borders on
 gaps inner 10
 gaps outer 0
 bindsym $mod+z          gaps outer current plus 5
 bindsym $mod+Shift+z    gaps outer current minus 5
 
-#brightness for external monitors
+# Brightness for external monitors
 bindsym $mod+u exec brightnessctl s 10-
 bindsym $mod+Shift+u exec brightnessctl s +10
 
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# start a terminal
+# Start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
-# kill focused window
+# Kill focused window
 bindsym $mod+Shift+q kill
 
-# change focus
+# Change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move focused window
+# Move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# enter fullscreen mode for the focused container
+# Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (tabbed, toggle split)
+# Change container layout (tabbed, toggle split)
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
+# Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
+# Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
+
+# Drag windows
+floating_modifier $mod
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -118,14 +97,13 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
+# Exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -138,13 +116,7 @@ mode "resize" {
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $mod+r
+        # Back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"

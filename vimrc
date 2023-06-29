@@ -33,7 +33,7 @@ let g:lsc_auto_map = {
     \ 'FindReferences': 'gr',
     \ 'NextReference': '<C-j>',
     \ 'PreviousReference': '<C-k>',
-    \ 'FindCodeActions': '<C-a>',
+    \ 'FindCodeActions': 'ga',
     \ 'Rename': '<F2>',
     \ 'ShowHover': v:true,
     \ 'SignatureHelp': 'gm',
