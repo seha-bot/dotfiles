@@ -1,5 +1,4 @@
 call plug#begin()
-Plug 'natebosch/vim-lsc' " Language server
 Plug 'dense-analysis/ale' " Linter
 Plug 'tikhomirov/vim-glsl' " GLSL syntax
 Plug 'sainnhe/everforest' " Color theme
@@ -20,30 +19,12 @@ let g:everforest_background = 'hard'
 let g:everforest_better_performance = 1
 colorscheme everforest
 
-" LSP and lint
-let g:lsc_server_commands = {
-    \ 'c': {
-    \     'command': 'clangd',
-    \     'log_level': -1,
-    \     'suppress_stderr': v:true,
-    \ }
-    \}
-let g:lsc_auto_map = {
-    \ 'GoToDefinition': 'gd',
-    \ 'FindReferences': 'gr',
-    \ 'NextReference': '<C-j>',
-    \ 'PreviousReference': '<C-k>',
-    \ 'FindCodeActions': 'ga',
-    \ 'Rename': '<F2>',
-    \ 'ShowHover': v:true,
-    \ 'SignatureHelp': 'gm',
-    \ 'Completion': 'completefunc',
-    \}
-inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
-nnoremap <C-f> :LSClientAllDiagnostics<cr>
-set completeopt=menu,menuone,noinsert,noselect
+" Ale
 let g:ale_c_cc_options = '-std=c11 -Wall -Iinc -Ibuild/deps'
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\}
+let g:ale_fix_on_save = 1
 
 " Nerdtree
 nnoremap <C-s> :NERDTreeToggle<cr>
@@ -82,4 +63,3 @@ let &t_EI = "\e[2 q"
 " Transparent background
 hi Normal guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE
-
