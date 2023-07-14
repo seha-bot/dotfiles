@@ -1,16 +1,12 @@
 call plug#begin()
-Plug 'dense-analysis/ale' " Linter
-Plug 'tikhomirov/vim-glsl' " GLSL syntax
 Plug 'sainnhe/everforest' " Color theme
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP
 Plug 'sheerun/vim-polyglot' " Syntax highlight
 Plug 'preservim/nerdtree' " File explorer
 Plug 'kien/ctrlp.vim' " File finder
 call plug#end()
 
-" GLSL language for these files TODO maybe replace with polyglot
-autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
-
-" Theme settings
+" Everforest
 if has('termguicolors')
     set termguicolors
 endif
@@ -19,12 +15,12 @@ let g:everforest_background = 'hard'
 let g:everforest_better_performance = 1
 colorscheme everforest
 
-" Ale
-let g:ale_c_cc_options = '-std=c11 -Wall -Iinc -Ibuild/deps'
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\}
-let g:ale_fix_on_save = 1
+" CoC
+let g:coc_global_extensions = ['coc-json', 'coc-clangd']
+inoremap <silent><expr> <C-n> coc#refresh()
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
 " Nerdtree
 nnoremap <C-s> :NERDTreeToggle<cr>
@@ -42,11 +38,19 @@ inoremap <C-s>' ''<Left>
 nnoremap <F5> :w<cr>:exe "!cd " .. expand("%:p:h") .. " && ./start.sh"<cr>
 nnoremap <F4> :w<cr>:exe "!cd " .. expand("%:p:h") .. "/../ && clear && make && build/main"<cr>
 
-" Tabs and terminal
-nnoremap <C-n> :below term<cr>
+" Window management
+nnoremap <C-n> :botright term<cr>
 nnoremap <C-l> :tabnext<cr>
 nnoremap <C-h> :tabprevious<cr>
-nnoremap <C-c> :tabclose<cr>
+nnoremap <Esc>h <C-w>h
+nnoremap <Esc>l <C-w>l
+nnoremap <Esc>j <C-w>j
+nnoremap <Esc>k <C-w>k
+nnoremap <Esc>H <C-w>H
+nnoremap <Esc>L <C-w>L
+nnoremap <Esc>J <C-w>J
+nnoremap <Esc>K <C-w>K
+nnoremap <C-w> :q<cr>
 
 " Mandatory setup
 set number
@@ -63,3 +67,4 @@ let &t_EI = "\e[2 q"
 " Transparent background
 hi Normal guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE
+
