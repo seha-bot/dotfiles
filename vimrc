@@ -16,11 +16,16 @@ let g:everforest_better_performance = 1
 colorscheme everforest
 
 " CoC
-let g:coc_global_extensions = ['coc-json', 'coc-clangd']
+let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-highlight']
 inoremap <silent><expr> <C-n> coc#refresh()
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+autocmd CursorHold * silent call CocActionAsync('highlight')
+nmap <silent> gd <Plug>(coc-definition)
+nmap ga <Plug>(coc-codeaction-selected)
+nmap <F2> <Plug>(coc-rename)
+let g:rustfmt_autosave = 1
 
 " Nerdtree
 nnoremap <C-s> :NERDTreeToggle<cr>
@@ -34,9 +39,9 @@ inoremap <C-s>{ {}<Left><cr><Up><Right>
 inoremap <C-s>" ""<Left>
 inoremap <C-s>' ''<Left>
 
-" Run program
-nnoremap <F5> :w<cr>:exe "!cd " .. expand("%:p:h") .. " && ./start.sh"<cr>
-nnoremap <F4> :w<cr>:exe "!cd " .. expand("%:p:h") .. "/../ && clear && make && build/main"<cr>
+" Build & run
+nnoremap <F5> :w<cr>:exe "!clear && make && build/main"<cr>
+nnoremap <F4> :w<cr>:exe "!clear && make && build/main " . input("Args: ")<cr>
 
 " Window management
 nnoremap <C-n> :botright term<cr>
