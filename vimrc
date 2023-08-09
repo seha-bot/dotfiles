@@ -16,7 +16,7 @@ let g:everforest_better_performance = 1
 colorscheme everforest
 
 " CoC
-let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-highlight']
+let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-highlight', 'coc-rust-analyzer']
 inoremap <silent><expr> <C-n> coc#refresh()
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
@@ -26,6 +26,8 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap ga <Plug>(coc-codeaction-selected)
 nmap <F2> <Plug>(coc-rename)
 let g:rustfmt_autosave = 1
+inoremap <nowait><expr> <C-j> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <nowait><expr> <C-k> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 
 " Nerdtree
 nnoremap <C-s> :NERDTreeToggle<cr>
@@ -64,6 +66,7 @@ set expandtab
 set tabstop=8 softtabstop=0
 set belloff=all
 set clipboard=unnamedplus
+autocmd BufWritePre * %s/\s\+$//e
 
 " Fancy cursor
 let &t_SI = "\e[6 q"
