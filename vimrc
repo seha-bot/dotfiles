@@ -4,6 +4,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP
 Plug 'sheerun/vim-polyglot' " Syntax highlight
 Plug 'preservim/nerdtree' " File explorer
 Plug 'kien/ctrlp.vim' " File finder
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 call plug#end()
 
 " Everforest
@@ -47,16 +48,12 @@ nnoremap <F4> :w<cr>:exe "!clear && make && build/main " . input("Args: ")<cr>
 
 " Window management
 nnoremap <C-n> :botright term<cr>
-nnoremap <C-l> :tabnext<cr>
-nnoremap <C-h> :tabprevious<cr>
-nnoremap <Esc>h <C-w>h
-nnoremap <Esc>l <C-w>l
-nnoremap <Esc>j <C-w>j
-nnoremap <Esc>k <C-w>k
-nnoremap <Esc>H <C-w>H
-nnoremap <Esc>L <C-w>L
-nnoremap <Esc>J <C-w>J
-nnoremap <Esc>K <C-w>K
+nnoremap <C-L> :tabnext<cr>
+nnoremap <C-H> :tabprevious<cr>
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
 nnoremap <C-w> :q<cr>
 
 " Mandatory setup
@@ -76,3 +73,5 @@ let &t_EI = "\e[2 q"
 hi Normal guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE
 
+" 80 column line
+" set colorcolumn=80
