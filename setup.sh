@@ -2,10 +2,10 @@
 
 mkdir -p ~/.config && cp -rf config/* ~/.config/ && cp -rf vimrc ~/.vimrc
 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-sudo pacman -Syu --needed base-devel i3-wm ranger neofetch alacritty polybar rofi xorg xorg-xinit xclip gvim feh maim brightnessctl ttf-sourcecodepro-nerd nodejs yarn
+sudo pacman -Syu --needed base-devel xplr neofetch alacritty xorg xorg-xinit xclip gvim feh maim brightnessctl ttf-sourcecodepro-nerd
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -sir && cd .. && rm -rf yay
-yay -S picom-animations-git
+yay -S leftwm
 
