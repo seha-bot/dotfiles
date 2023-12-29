@@ -1,3 +1,5 @@
+export EDITOR=nvim
+
 setxkbmap -option caps:swapescape
 
 xinput set-prop "MSFT0002:00 04F3:31AD Touchpad" "Synaptics Tap Action" 0, 0, 0, 0, 1, 0, 0
