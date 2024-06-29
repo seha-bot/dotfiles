@@ -1,8 +1,8 @@
 import XMonad
 import Data.Monoid
 import System.Exit
-
 import XMonad.Hooks.DynamicLog
+import XMonad.Util.SpawnOnce
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -46,6 +46,18 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
+
+    -- brightness up
+    , ((modm,               xK_y     ), spawn "brightnessctl s +5%")
+
+    -- brightness down
+    , ((modm .|. shiftMask, xK_y     ), spawn "brightnessctl s 5%-")
+
+    -- take screenshot of selection
+    , ((modm .|. shiftMask, xK_s     ), spawn "maim -s | xclip -selection clipboard -t image/png")
+
+    -- take screenshot of the entire screen
+    , ((modm,               xK_Print ), spawn "maim $HOME/Pictures/$(date +%s).png")
 
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "dmenu_run")
@@ -231,6 +243,7 @@ myLogHook = return ()
 myStartupHook = do
     spawn "setxkbmap -option caps:swapescape"
     spawn "xset r rate 200 40"
+    spawnOnce "picom"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.

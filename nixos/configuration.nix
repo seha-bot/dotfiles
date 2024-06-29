@@ -47,7 +47,11 @@
     xmobar
     dmenu
     xorg.xmessage
+    xclip
+    picom
+    maim
     pavucontrol
+    brightnessctl
     neovim
     firefox
     alacritty
@@ -55,6 +59,10 @@
     xplr
     nixfmt
     git
+    gitui
+    cmake
+    clang-tools
+    pkg-config
   ];
 
   nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
