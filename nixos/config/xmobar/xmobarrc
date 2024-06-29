@@ -1,0 +1,51 @@
+Config { font = "Bitstream Vera Sans Mono Bold 9"
+       , borderColor = "black"
+       , border = TopB
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = Top
+       , commands = [ Run StdinReader
+
+                    , Run Date "<fc=#ABABAB>%d-%m-%y (%a) %T</fc>" "date" 10
+
+                    , Run DynNetwork [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
+                                     , "--Low"      , "1000" -- units: B/s
+                                     , "--High"     , "5000" -- units: B/s
+                                     , "--low"      , "darkgreen"
+                                     , "--normal"   , "darkorange"
+                                     , "--high"     , "darkred"
+                                     ] 10
+
+                    , Run Memory [ "--template" ,"Mem: <usedratio>%"
+                                 , "--Low"      , "20"
+                                 , "--High"     , "90"
+                                 , "--low"      , "darkgreen"
+                                 , "--normal"   , "darkorange"
+                                 , "--high"     , "darkred"
+                                 ] 10
+
+                    , Run Cpu [ "--template" , "Cpu: <total>%"
+                              , "--Low"      , "50"
+                              , "--High"     , "85"
+                              , "--low"      , "darkgreen"
+                              , "--normal"   , "darkorange"
+                              , "--high"     , "darkred"
+                              ] 10
+                    
+                    , Run Battery [ "--template" , "Batt: <acstatus>"
+                                  , "--Low"      , "10"
+                                  , "--High"     , "80"
+                                  , "--low"      , "darkred"
+                                  , "--normal"   , "darkorange"
+                                  , "--high"     , "darkgreen"
+                                  , "--"
+                                  , "-o"	, "<left>% (<timeleft>)"
+                                  , "-O"	, "<fc=#dAA520>Charging</fc>"
+                                  , "-i"	, "<fc=#006000>Charged</fc>"
+                                  ] 50
+
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% | %cpu% | %memory% | %dynnetwork% }{ %date% || %battery%"
+       }
