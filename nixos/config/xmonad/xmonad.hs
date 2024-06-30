@@ -246,6 +246,7 @@ myStartupHook = do
     spawn "setxkbmap -option caps:swapescape"
     spawn "xset r rate 200 40"
     spawnOnce "picom"
+    spawnOnce "nitrogen --restore"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.

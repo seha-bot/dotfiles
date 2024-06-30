@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -25,51 +30,53 @@
 
   users.users.seha = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   services.xserver = {
     enable = true;
     autorun = false;
-    layout = "us";
-    xkbVariant = "";
+    xkb.layout = "us";
+    xkb.variant = "";
     displayManager.startx.enable = true;
     windowManager.xmonad = {
       enable = true;
       enableContribAndExtras = true;
       config = builtins.readFile /home/seha/.config/xmonad/xmonad.hs;
-      extraPackages = hpkgs: [ hpkgs.xmobar ];
     };
   };
 
+  services.picom.enable = true;
   hardware.pulseaudio.enable = true;
+  programs.firefox.enable = true;
+  programs.git.enable = true;
+
   environment.systemPackages = with pkgs; [
     xmobar
     dmenu
     xorg.xmessage
     xclip
-    picom
     maim
     pavucontrol
     brightnessctl
-    neovim
-    firefox
+    nitrogen
     alacritty
     obsidian
     xplr
-    nixfmt
-    git
+    nixfmt-rfc-style
     gitui
-    cmake
+    libclang
     clang-tools
+    cmake
     pkg-config
+    unzip
   ];
 
   nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [ "obsidian" ];
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "obsidian" ];
 
-  environment.variables = { EDITOR = "nvim"; };
-
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.11";
 }
