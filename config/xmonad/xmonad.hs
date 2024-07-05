@@ -245,6 +245,7 @@ myLogHook = return ()
 myStartupHook = do
     spawn "setxkbmap -option caps:swapescape"
     spawn "xset r rate 200 40"
+    spawn "xsetroot -cursor_name left_ptr"
     spawnOnce "picom"
     spawnOnce "nitrogen --restore"
 

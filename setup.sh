@@ -1,8 +1,28 @@
 #!/bin/bash
 
-# mkdir -p ~/.config && cp -rf config/* ~/.config/ && cp -rf vimrc ~/.vimrc
-# mkdir -p ~/.config && cp -rf config/* ~/.config/
-
-sudo pacman -S base-devel neovim ranger alacritty xorg xorg-xinit xorg-xmessage xclip nitrogen maim brightnessctl xmonad xmonad-contrib xmobar ttf-sourcecodepro-nerd ttf-bitstream-vera dmenu pulseaudio pavucontrol
+sudo pacman -S base-devel \
+    bash-completion \
+    neovim \
+    ranger \
+    alacritty \
+    xorg \
+    xorg-xinit \
+    xorg-xmessage \
+    xclip \
+    nitrogen \
+    picom \
+    maim \
+    brightnessctl \
+    xmonad \
+    xmonad-contrib \
+    xmobar \
+    dmenu \
+    pulseaudio \
+    pavucontrol \
+    ttf-sourcecodepro-nerd \
+    ttf-bitstream-vera \
+    noto-fonts \
+    noto-fonts-cjk \
+    noto-fonts-emoji \
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -sir && cd .. && rm -rf yay
