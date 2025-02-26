@@ -1,0 +1,90 @@
+# launcher
+super + p
+	rofi -show drun
+
+# terminal
+super + shift + Return
+	alacritty
+
+# take screenshot of selection and save to clipboard and file
+super + shift + s
+	maim -s | tee $HOME/Pictures/$(date +%s).png | xclip -selection clipboard -t image/png
+
+# take screenshot of the entire screen
+super + Print
+	maim $HOME/Pictures/$(date +%s).png
+
+# toggle audio mute
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# dedicated volume keys
+{XF86AudioRaiseVolume,XF86AudioLowerVolume}
+	pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
+
+# brightness control
+super + {_,shift + }y
+	brightnessctl s {1%+,1%-}
+
+# quit dk
+super + shift + x
+	dkcmd exit
+
+# TODO are these two doing the same thing?
+# can you make it so that super + shift + r is the only one
+# reload sxhkd && dkrc
+super + shift + r
+	pkill -USR1 -x sxhkd && $HOME/.config/dk/dkrc
+
+# restart dk
+super + ctrl + shift + r
+	dkcmd restart
+
+# focus next or previous window
+super + {j,k}
+	dkcmd win focus {next,prev}
+
+# close window
+super + shift + q
+	dkcmd win kill
+
+# swap tiled window in/out of master, cycle tiled windows in place
+super + {space,Tab}
+	dkcmd win {swap,cycle}
+
+# toggle fullscreen
+F11
+	dkcmd win full
+
+# toggle floating
+super + shift + space
+	dkcmd win float
+
+# move window, signed (+/-) for relative changes, for tiled windows
+# y coord changes will move the window up/down the stack
+super + shift + {h,j,k,l}
+	dkcmd win resize {x=-20,y=+20,y=-20,x=+20}
+
+# resize window, signed (+/-) for relative changes
+super + ctrl + {h,j,k,l}
+	dkcmd win resize {w=-20,h=+20,h=-20,w=+20}
+
+# view, send, or follow to a workspace (by number)
+super + {_,shift + ,ctrl + }{1-6}
+	dkcmd ws {view,send,follow} {1-6}
+
+# view, send, or follow to the next, previous, or last active monitor
+super + {_,shift + ,ctrl + }{comma,period,backslash}
+	dkcmd mon {view,send,follow} {prev,next,last}
+
+# there's a problem with mono :/
+# you must use super + tab to switch in mono mode
+# change active workspace layout or cycle between them
+super + {t,m,g}
+	dkcmd set layout {tile,mono,grid}
+
+# change number of windows in master or first stack
+super + {_,shift + }{i,o}
+	dkcmd set {master,stack} {+1,-1}
+
+# vim:ft=sxhkdrc

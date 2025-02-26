@@ -1,5 +1,3 @@
-import = ["/home/seha/.config/alacritty/tokyonight_storm.toml"]
-live_config_reload = true
 
 [colors]
 draw_bold_text_with_bright_colors = true
@@ -41,7 +39,7 @@ multiplier = 3
 decorations = "full"
 dynamic_padding = true
 dynamic_title = true
-opacity = 0.9
+opacity = 1
 
 [window.class]
 general = "Alacritty"
@@ -50,3 +48,7 @@ instance = "Alacritty"
 [window.padding]
 x = 5
 y = 5
+
+[general]
+# import = ["/home/seha/.config/alacritty/tokyonight_storm.toml"]
+live_config_reload = true

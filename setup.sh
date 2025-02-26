@@ -13,9 +13,9 @@ sudo pacman -S base-devel \
     picom \
     maim \
     brightnessctl \
-    xmonad \
-    xmonad-contrib \
-    xmobar \
+    sxhkd \
+    polybar \
+    rofi \
     dmenu \
     pulseaudio \
     pavucontrol \
@@ -26,3 +26,5 @@ sudo pacman -S base-devel \
     noto-fonts-emoji \
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -sir && cd .. && rm -rf yay
+
+yay -S dk
