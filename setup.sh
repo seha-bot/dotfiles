@@ -1,29 +1,27 @@
 #!/bin/bash
 
-sudo pacman -S base-devel \
-    bash-completion \
-    neovim \
-    ranger \
+sudo pacman -S \
     alacritty \
-    xorg \
-    xorg-xinit \
-    xorg-xmessage \
-    xclip \
-    nitrogen \
-    picom \
-    maim \
+    base-devel \
+    bash-completion \
     brightnessctl \
-    sxhkd \
-    polybar \
-    rofi \
-    dmenu \
-    pulseaudio \
-    pavucontrol \
-    ttf-sourcecodepro-nerd \
-    ttf-bitstream-vera \
+    neovim \
+    niri \
     noto-fonts \
     noto-fonts-cjk \
     noto-fonts-emoji \
+    pavucontrol \
+    pulseaudio \
+    ranger \
+    rofi \
+    tuned \
+    tuned-ppd \
+    ttf-sourcecodepro-nerd \
+    ttf-bitstream-vera \
+    udiskie \
+    waybar \
+    wl-clipboard \
+    wl-clip-persist \
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -sir && cd .. && rm -rf yay
 

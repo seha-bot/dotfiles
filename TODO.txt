@@ -1,4 +1,0 @@
-low power battery
-picom settings
-
-search for todos in files
