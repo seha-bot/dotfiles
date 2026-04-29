@@ -11,7 +11,6 @@ sudo pacman -S \
     noto-fonts-cjk \
     noto-fonts-emoji \
     pavucontrol \
-    pulseaudio \
     ranger \
     rofi \
     tuned \

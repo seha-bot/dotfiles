@@ -2,7 +2,7 @@ input {
     keyboard {
         xkb {
             layout "us,ba"
-            options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
+            options "grp:win_space_toggle,compose:ralt,caps:swapescape"
         }
         repeat-delay 200
         repeat-rate 40
@@ -22,6 +22,10 @@ input {
 
     // Focus windows and outputs automatically when moving the mouse into them.
     focus-follows-mouse max-scroll-amount="0%"
+
+    // By default, niri will take over the power button to make it
+    // sleep instead of power off.
+    disable-power-key-handling
 }
 
 // Settings that influence how windows are positioned and sized.
