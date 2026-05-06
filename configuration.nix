@@ -7,9 +7,9 @@
 
   boot = {
     loader = {
-      systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
-      grub.device = "/dev/vda1";
+      grub.efiSupport = true;
+      grub.device = "nodev";
     };
     kernelPackages = pkgs.linuxPackages_latest;
   };
