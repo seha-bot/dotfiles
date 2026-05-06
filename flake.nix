@@ -9,11 +9,11 @@
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
     nixosConfigurations.ol-reliable = let
+      # TODO: pass common values as arguments
       user = "seha";
-      hostname = "ol-reliable";
     in nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit user hostname; };
+      specialArgs = { inherit user; };
       modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager
