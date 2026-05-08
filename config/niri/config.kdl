@@ -58,6 +58,7 @@ layout {
         // where you can see its inactive-color is on other monitors.
         inactive-color "#505050"
     }
+    background-color "#000000"
 }
 
 spawn-at-startup "waybar"
@@ -105,8 +106,8 @@ binds {
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
     // but you need to manually put each argument in separate "" quotes.
-    Mod+Y allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+1%"; }
-    Mod+Shift+Y allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "1%-"; }
+    Mod+Y allow-when-locked=true { spawn "brightnessctl" "s" "1%+"; }
+    Mod+Shift+Y allow-when-locked=true { spawn "brightnessctl" "s" "1%-"; }
 
     Mod+O repeat=false { toggle-overview; }
 
