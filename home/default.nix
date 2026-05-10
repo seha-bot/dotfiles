@@ -27,6 +27,7 @@
     ninja
     pavucontrol
     ranger
+    ripgrep
     tree
     unzip
     wdisplays
