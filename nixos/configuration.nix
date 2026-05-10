@@ -27,7 +27,9 @@
   };
 
   services = {
+    automatic-timezoned.enable = true;
     openssh.enable = true;
+    power-profiles-daemon.enable = true;
   };
 
   hardware.graphics.enable = true;
@@ -39,13 +41,12 @@
     "vscode"
   ];
 
-  fonts.packages = builtins.attrValues {
-    inherit (pkgs)
-    font-awesome
-    noto-fonts
-    noto-fonts-cjk-sans
-    ;
-  };
+  fonts.packages = [
+    pkgs.font-awesome
+    pkgs.nerd-fonts.sauce-code-pro
+    pkgs.nerd-fonts.symbols-only
+    pkgs.noto-fonts
+  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

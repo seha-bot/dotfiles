@@ -41,5 +41,13 @@
     };
   };
 
+  xdg.desktopEntries = {
+    etf = {
+      name = "ETF profile";
+      categories = [ "WebBrowser" ];
+      exec = "firefox -P etf";
+    };
+  };
+
   home.stateVersion = "26.05";
 }
