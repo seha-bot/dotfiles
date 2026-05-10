@@ -33,6 +33,8 @@
 
       number = true;
       relativenumber = true;
+
+      scrolloff = 5;
     };
 
     colorschemes.github-theme = {

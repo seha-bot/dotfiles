@@ -28,6 +28,10 @@ input {
     disable-power-key-handling
 }
 
+cursor {
+    xcursor-size 32
+}
+
 // Settings that influence how windows are positioned and sized.
 layout {
     empty-workspace-above-first
