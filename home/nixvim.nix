@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, ... }:
 
 {
   imports = [
@@ -35,7 +35,16 @@
       relativenumber = true;
     };
 
+    colorschemes.github-theme = {
+      enable = true;
+      settings.options = {
+        transparent = true;
+      };
+    };
+
     plugins = {
+      sleuth.enable = true;
+
       telescope = {
         enable = true;
 
@@ -49,14 +58,17 @@
         };
       };
 
+      treesitter = {
+        enable = true;
+      
+        settings = {
+          highlight.enable = true;
+          indent.enable = true;
+        };
+      };
+
       web-devicons.enable = true;
       which-key.enable = true;
-    };
-
-    extraPlugins = builtins.attrValues {
-      inherit (pkgs.vimPlugins)
-      vim-sleuth
-      ;
     };
 
     keymaps = [
