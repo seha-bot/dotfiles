@@ -5,7 +5,10 @@
       colors.draw_bold_text_with_bright_colors = true;
       font.size = 12;
       mouse.hide_when_typing = true;
-      window.padding = { x = 5; y = 5; };
+      window.padding = {
+        x = 5;
+        y = 5;
+      };
     };
   };
 }

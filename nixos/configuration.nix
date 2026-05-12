@@ -1,4 +1,9 @@
-{ pkgs, lib, user, ... }:
+{
+  pkgs,
+  lib,
+  user,
+  ...
+}:
 
 {
   imports = [
@@ -18,7 +23,10 @@
 
   users.users."${user}" = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+    ];
   };
 
   networking = {
@@ -38,9 +46,11 @@
   programs.niri.enable = true;
   programs.nano.enable = false;
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "vscode"
-  ];
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "vscode"
+    ];
 
   fonts.packages = [
     pkgs.font-awesome
@@ -49,7 +59,10 @@
     pkgs.noto-fonts
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nix.channel.enable = false;
 
   system.stateVersion = "26.05";

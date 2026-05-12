@@ -15,23 +15,23 @@
 
   home.packages = builtins.attrValues {
     inherit (pkgs)
-    bat
-    brightnessctl
-    firefox
-    fzf
-    # TODO: should this be inside ./git.nix?
-    gitui
-    imv
-    nixd
-    nixfmt
-    pavucontrol
-    ranger
-    ripgrep
-    tree
-    unzip
-    wdisplays
-    wl-clipboard
-    ;
+      bat
+      brightnessctl
+      firefox
+      fzf
+      # TODO: should this be inside ./git.nix?
+      gitui
+      imv
+      nixd
+      nixfmt
+      pavucontrol
+      ranger
+      ripgrep
+      tree
+      unzip
+      wdisplays
+      wl-clipboard
+      ;
   };
 
   dconf.settings = {
