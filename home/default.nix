@@ -4,6 +4,7 @@
   imports = [
     ./alacritty.nix
     ./bash.nix
+    ./direnv.nix
     ./git.nix
     ./niri
     ./nixvim.nix
@@ -16,15 +17,10 @@
     inherit (pkgs)
     bat
     brightnessctl
-    clang
-    clang-tools
-    cmake
     firefox
     fzf
     gitui
     imv
-    lldb
-    ninja
     pavucontrol
     ranger
     ripgrep

@@ -36,6 +36,7 @@
 
   # TODO: you won't need this once you setup niri correctly
   programs.niri.enable = true;
+  programs.nano.enable = false;
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "vscode"

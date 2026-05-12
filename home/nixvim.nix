@@ -62,11 +62,7 @@
 
       treesitter = {
         enable = true;
-      
-        settings = {
-          highlight.enable = true;
-          indent.enable = true;
-        };
+        settings.indent.enable = true;
       };
 
       web-devicons.enable = true;
