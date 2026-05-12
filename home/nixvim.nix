@@ -33,6 +33,7 @@
 
       number = true;
       relativenumber = true;
+      signcolumn = "number";
 
       scrolloff = 5;
     };
@@ -45,15 +46,22 @@
     };
 
     plugins = {
+      lsp = {
+        enable = true;
+        servers.nixd.enable = true;
+        keymaps.lspBuf = {
+          "<leader>a" = "code_action";
+          "<leader>f" = "format";
+        };
+      };
+
       sleuth.enable = true;
 
       telescope = {
         enable = true;
-
         extensions.fzf-native.enable = true;
-
         keymaps = {
-          "<leader>f" = "find_files";
+          "<leader><leader>" = "find_files";
           "<leader>g" = "live_grep";
           "<leader>b" = "buffers";
           "<leader>h" = "help_tags";
