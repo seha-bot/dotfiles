@@ -37,7 +37,10 @@
   services = {
     automatic-timezoned.enable = true;
     openssh.enable = true;
-    power-profiles-daemon.enable = true;
+    tlp = {
+      enable = true;
+      pd.enable = true;
+    };
   };
 
   hardware.graphics.enable = true;
@@ -46,9 +49,12 @@
   programs.niri.enable = true;
   programs.nano.enable = false;
 
+  # TODO: this should be configured per user and per hostname
   nixpkgs.config.allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
+      "nvidia-settings"
+      "nvidia-x11"
       "vscode"
     ];
 

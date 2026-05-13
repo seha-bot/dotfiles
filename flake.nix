@@ -2,12 +2,13 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -16,7 +17,12 @@
   };
 
   outputs =
-    inputs@{ nixpkgs, home-manager, ... }:
+    inputs@{
+      nixpkgs,
+      home-manager,
+      nixos-hardware,
+      ...
+    }:
     {
       nixosConfigurations.ol-reliable =
         let
@@ -28,6 +34,7 @@
           specialArgs = { inherit user; };
           modules = [
             ./nixos/configuration.nix
+            nixos-hardware.nixosModules.lenovo-ideapad-15ach6
             home-manager.nixosModules.home-manager
             {
               home-manager = {
