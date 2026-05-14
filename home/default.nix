@@ -17,6 +17,7 @@
     inherit (pkgs)
       bat
       brightnessctl
+      easyeffects
       firefox
       fzf
       # TODO: should this be inside ./git.nix?
