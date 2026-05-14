@@ -19,7 +19,15 @@
       };
     };
     kernelPackages = pkgs.linuxPackages_latest;
+    zswap.enable = true;
   };
+
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 8 * 1024; # 8GB
+    }
+  ];
 
   users.users."${user}" = {
     isNormalUser = true;
