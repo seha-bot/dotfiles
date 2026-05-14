@@ -37,10 +37,10 @@
   services = {
     automatic-timezoned.enable = true;
     openssh.enable = true;
-    tlp = {
-      enable = true;
-      pd.enable = true;
-    };
+
+    # TODO: wait for https://github.com/NixOS/nixos-hardware/pull/1630
+    tlp.enable = false;
+    tuned.enable = true;
   };
 
   hardware.graphics.enable = true;
