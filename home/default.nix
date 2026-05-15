@@ -8,6 +8,7 @@
     ./git.nix
     ./niri
     ./nixvim.nix
+    ./ranger.nix
     ./rofi.nix
     ./vscode.nix
     ./waybar
@@ -26,7 +27,6 @@
       nixd
       nixfmt
       pavucontrol
-      ranger
       ripgrep
       tree
       unzip
