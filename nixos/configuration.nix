@@ -44,6 +44,37 @@
 
   services = {
     automatic-timezoned.enable = true;
+
+    kmonad = {
+      enable = true;
+      keyboards.ergonomic = {
+        device = "/dev/input/by-id/usb-ITE_Tech._Inc._ITE_Device_8176_-event-kbd";
+        defcfg = {
+          enable = true;
+          fallthrough = true;
+        };
+        config = ''
+          (defsrc
+            esc
+            caps
+            lsft
+            lctl lalt
+          )
+
+          (defalias
+            cesc (tap-hold-next 200 esc lsft)
+          )
+
+          (deflayer base
+            caps
+            @cesc
+            XX
+            lalt lctl
+          )
+        '';
+      };
+    };
+
     openssh.enable = true;
 
     # TODO: wait for https://github.com/NixOS/nixos-hardware/pull/1630
