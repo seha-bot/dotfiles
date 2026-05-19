@@ -24,6 +24,7 @@
       # TODO: should this be inside ./git.nix?
       gitui
       imv
+      keepassxc
       nixd
       nixfmt
       pavucontrol
