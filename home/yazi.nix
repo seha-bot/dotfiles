@@ -18,19 +18,23 @@
     # TODO: Remove after the following gets merged:
     # https://github.com/sxyazi/yazi/issues/3914
     # https://github.com/jstkdng/ueberzugpp/issues/264
-    settings.plugin.prepend_previewers = [
-      {
-        mime = "image/*";
-        run = "noop";
-      }
-      {
-        mime = "video/*";
-        run = "noop";
-      }
-      {
-        mime = "pdf/*";
-        run = "noop";
-      }
-    ];
+    settings = {
+      mgr.linemode = "size";
+
+      plugin.prepend_previewers = [
+        {
+          mime = "image/*";
+          run = "noop";
+        }
+        {
+          mime = "video/*";
+          run = "noop";
+        }
+        {
+          mime = "pdf/*";
+          run = "noop";
+        }
+      ];
+    };
   };
 }
