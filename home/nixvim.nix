@@ -60,9 +60,14 @@
           nixd.enable = true;
         };
 
-        keymaps.lspBuf = {
-          "<leader>a" = "code_action";
-          "<leader>f" = "format";
+        keymaps = {
+          diagnostic = {
+            "<leader>e" = "open_float";
+          };
+          lspBuf = {
+            "<leader>a" = "code_action";
+            "<leader>f" = "format";
+          };
         };
       };
 
@@ -81,6 +86,7 @@
           "<leader>g" = "live_grep";
           "<leader>b" = "buffers";
           "<leader>h" = "help_tags";
+          "<leader>d" = "diagnostics";
         };
       };
 
