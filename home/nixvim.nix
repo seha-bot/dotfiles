@@ -87,6 +87,7 @@
           "<leader>b" = "buffers";
           "<leader>h" = "help_tags";
           "<leader>d" = "diagnostics";
+          "<leader>/" = "current_buffer_fuzzy_find";
         };
       };
 
