@@ -40,11 +40,15 @@
       scrolloff = 5;
     };
 
-    colorschemes.github-theme = {
+    # Highlight with a box instead of an underline.
+    extraConfigVim = ''
+      hi! link MiniCursorword Visual
+      hi! MiniCursorwordCurrent gui=nocombine guifg=NONE guibg=NONE
+    '';
+
+    colorschemes.catppuccin = {
       enable = true;
-      settings.options = {
-        transparent = true;
-      };
+      settings.transparent_background = true;
     };
 
     plugins = {
@@ -62,8 +66,13 @@
         };
       };
 
+      # Highlight same words as the one under cursor.
+      mini-cursorword.enable = true;
+
+      # Autodetect tab/space.
       sleuth.enable = true;
 
+      # Fuzzy search for various lists.
       telescope = {
         enable = true;
         extensions.fzf-native.enable = true;
@@ -75,6 +84,7 @@
         };
       };
 
+      # Folding and better indentation.
       treesitter = {
         enable = true;
         folding.enable = true;
@@ -95,10 +105,14 @@
         ];
       };
 
+      # Icon pack. Required for telescope.
       web-devicons.enable = true;
+
+      # Keymap help menu.
       which-key.enable = true;
     };
 
+    # Remain in visual mode after indenting.
     keymaps = [
       {
         mode = "v";
