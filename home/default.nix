@@ -8,10 +8,10 @@
     ./git.nix
     ./niri
     ./nixvim.nix
-    ./ranger.nix
     ./rofi.nix
     ./vscode.nix
     ./waybar
+    ./yazi.nix
   ];
 
   home.packages = builtins.attrValues {
