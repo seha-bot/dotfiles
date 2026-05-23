@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ config, inputs, ... }:
 
 {
   imports = [
@@ -35,6 +35,8 @@
       relativenumber = true;
       signcolumn = "number";
 
+      foldlevelstart = 99;
+
       scrolloff = 5;
     };
 
@@ -48,7 +50,12 @@
     plugins = {
       lsp = {
         enable = true;
-        servers.nixd.enable = true;
+
+        servers = {
+          clangd.enable = true;
+          nixd.enable = true;
+        };
+
         keymaps.lspBuf = {
           "<leader>a" = "code_action";
           "<leader>f" = "format";
@@ -70,7 +77,22 @@
 
       treesitter = {
         enable = true;
-        settings.indent.enable = true;
+        folding.enable = true;
+        indent.enable = true;
+        grammarPackages = with config.programs.nixvim.plugins.treesitter.package.builtGrammars; [
+          cpp
+          bash
+          json
+          make
+          markdown
+          nix
+          regex
+          toml
+          vim
+          vimdoc
+          xml
+          yaml
+        ];
       };
 
       web-devicons.enable = true;
