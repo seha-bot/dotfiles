@@ -67,6 +67,7 @@
           lspBuf = {
             "<leader>a" = "code_action";
             "<leader>f" = "format";
+            "<leader>r" = "rename";
           };
         };
       };
@@ -87,6 +88,7 @@
           "<leader>b" = "buffers";
           "<leader>h" = "help_tags";
           "<leader>d" = "diagnostics";
+          "gd" = "lsp_definitions";
           "<leader>/" = "current_buffer_fuzzy_find";
         };
       };
