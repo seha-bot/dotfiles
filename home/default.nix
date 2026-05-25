@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ./alacritty.nix
     ./bash.nix
     ./direnv.nix
+    ./foot.nix
     ./git.nix
     ./niri
     ./nixvim.nix

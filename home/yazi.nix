@@ -3,6 +3,9 @@
     enable = true;
     enableBashIntegration = true;
 
+    # Show filesize or the number of items in a folder.
+    settings.mgr.linemode = "size";
+
     # These keymaps disable wrapping around in the file list.
     keymap.mgr.prepend_keymap = [
       {
@@ -14,27 +17,5 @@
         run = "arrow 1";
       }
     ];
-
-    # TODO: Remove after the following gets merged:
-    # https://github.com/sxyazi/yazi/issues/3914
-    # https://github.com/jstkdng/ueberzugpp/issues/264
-    settings = {
-      mgr.linemode = "size";
-
-      plugin.prepend_previewers = [
-        {
-          mime = "image/*";
-          run = "noop";
-        }
-        {
-          mime = "video/*";
-          run = "noop";
-        }
-        {
-          mime = "pdf/*";
-          run = "noop";
-        }
-      ];
-    };
   };
 }
