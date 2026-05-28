@@ -6,7 +6,6 @@
       main = {
         term = "xterm-256color";
         dpi-aware = "yes";
-        pad = "5x5";
       };
 
       colors-dark = {
