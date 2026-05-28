@@ -1,7 +1,6 @@
 {
   programs.yazi = {
     enable = true;
-    enableBashIntegration = true;
 
     # Show filesize or the number of items in a folder.
     settings.mgr.linemode = "size";

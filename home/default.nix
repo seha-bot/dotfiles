@@ -2,8 +2,7 @@
 
 {
   imports = [
-    ./bash.nix
-    ./direnv.nix
+    ./fish.nix
     ./foot.nix
     ./git.nix
     ./niri
@@ -18,6 +17,7 @@
     inherit (pkgs)
       bat
       brightnessctl
+      direnv
       easyeffects
       firefox
       fzf

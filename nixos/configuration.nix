@@ -35,6 +35,7 @@
       "wheel"
       "networkmanager"
     ];
+    shell = pkgs.fish;
   };
 
   networking = {
@@ -84,9 +85,14 @@
 
   hardware.graphics.enable = true;
 
-  # TODO: you won't need this once you setup niri correctly
-  programs.niri.enable = true;
-  programs.nano.enable = false;
+  programs = {
+    bash.enable = false;
+    fish.enable = true;
+    nano.enable = false;
+
+    # TODO: you won't need this once you setup niri correctly
+    niri.enable = true;
+  };
 
   # TODO: this should be configured per user and per hostname
   nixpkgs.config.allowUnfreePredicate =
