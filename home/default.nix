@@ -8,7 +8,6 @@
     ./niri
     ./nixvim.nix
     ./rofi.nix
-    ./vscode.nix
     ./waybar
     ./yazi.nix
   ];

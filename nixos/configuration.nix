@@ -100,7 +100,6 @@
     builtins.elem (lib.getName pkg) [
       "nvidia-settings"
       "nvidia-x11"
-      "vscode"
     ];
 
   fonts.packages = [
