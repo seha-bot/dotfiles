@@ -38,6 +38,17 @@
     shell = pkgs.fish;
   };
 
+  security = {
+    doas.enable = true;
+    sudo.enable = false;
+    doas.extraRules = [
+      {
+        users = [ "seha" ];
+        persist = true;
+      }
+    ];
+  };
+
   networking = {
     networkmanager.enable = true;
     hostName = "ol-reliable";
