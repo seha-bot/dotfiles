@@ -91,6 +91,10 @@ window-rule {
     open-floating true
 }
 
+recent-windows {
+    off
+}
+
 binds {
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
@@ -253,4 +257,25 @@ binds {
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+X { quit; }
+
+    // Both displays
+    Mod+F1 { spawn "sh" "-c" "niri msg output eDP-1 on && niri msg output HDMI-A-1 on"; }
+
+    // External Only
+    Mod+F2 { spawn "sh" "-c" "niri msg output eDP-1 off && niri msg output HDMI-A-1 on"; }
+
+    // Internal Only
+    Mod+F3 { spawn "sh" "-c" "niri msg output HDMI-A-1 off && niri msg output eDP-1 on"; }
+}
+
+// builtin monitor
+output "eDP-1" {
+    mode "1920x1080@165.004"
+    position x=0 y=0
+}
+
+// samsung tv
+output "Samsung Electric Company SAMSUNG 0x01000E00" {
+    mode "1920x1080@50.000"
+    position x=0 y=-1080
 }
