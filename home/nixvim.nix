@@ -1,4 +1,9 @@
-{ config, inputs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -40,18 +45,90 @@
       scrolloff = 5;
     };
 
-    # Highlight with a box instead of an underline.
-    extraConfigVim = ''
-      hi! link MiniCursorword Visual
-      hi! MiniCursorwordCurrent gui=nocombine guifg=NONE guibg=NONE
-    '';
-
     colorschemes.catppuccin = {
       enable = true;
       settings.transparent_background = true;
     };
 
     plugins = {
+      dap = {
+        enable = true;
+        adapters = {
+          executables = {
+            lldb = {
+              command = "${pkgs.lldb}/bin/lldb-dap";
+            };
+            gdb = {
+              command = "${pkgs.gdb}/bin/gdb";
+              args = [
+                "--interpreter=dap"
+                "--eval-command"
+                "set print pretty on"
+              ];
+            };
+          };
+        };
+        configurations = {
+          cpp = [
+            {
+              type = "lldb";
+              request = "launch";
+              name = "Launch executable (LLDB)";
+              program.__raw = ''
+                function()
+                  return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+                end
+              '';
+              cwd = "\${workspaceFolder}";
+              stopOnEntry = false;
+              args.__raw = ''
+                function()
+                  local args_string = vim.fn.input('Arguments: ')
+                  return vim.split(args_string, " +")
+                end
+              '';
+            }
+            {
+              type = "gdb";
+              request = "launch";
+              name = "Launch executable (GDB)";
+              program.__raw = ''
+                function()
+                  return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+                end
+              '';
+              cwd = "\${workspaceFolder}";
+              stopOnEntry = false;
+              args.__raw = ''
+                function()
+                  local args_string = vim.fn.input('Arguments: ')
+                  return vim.split(args_string, " +")
+                end
+              '';
+            }
+          ];
+        };
+      };
+
+      # UI for dap.
+      dap-view = {
+        enable = true;
+        settings.winbar = {
+          sections = [
+            "watches"
+            "scopes"
+            "exceptions"
+            "breakpoints"
+            "threads"
+            "repl"
+            "console"
+          ];
+          controls = {
+            enabled = true;
+          };
+        };
+      };
+
       lsp = {
         enable = true;
 
@@ -78,6 +155,9 @@
       # Autodetect tab/space.
       sleuth.enable = true;
 
+      # Highlighting for various todo comments.
+      todo-comments.enable = true;
+
       # Fuzzy search for various lists.
       telescope = {
         enable = true;
@@ -93,10 +173,11 @@
         };
       };
 
-      # Folding and better indentation.
+      # Folding, highlighting and better indentation.
       treesitter = {
         enable = true;
         folding.enable = true;
+        highlight.enable = true;
         indent.enable = true;
         grammarPackages = with config.programs.nixvim.plugins.treesitter.package.builtGrammars; [
           cpp
@@ -121,8 +202,8 @@
       which-key.enable = true;
     };
 
-    # Remain in visual mode after indenting.
     keymaps = [
+      # Remain in visual mode after indenting.
       {
         mode = "v";
         key = ">";
@@ -136,6 +217,16 @@
         mode = "v";
         key = "<";
         action = "<gv";
+        options = {
+          noremap = true;
+          silent = true;
+        };
+      }
+      # dap-view panel
+      {
+        mode = "n";
+        key = "<leader>m";
+        action = ":DapViewToggle<CR>";
         options = {
           noremap = true;
           silent = true;
