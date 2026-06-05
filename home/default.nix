@@ -26,6 +26,7 @@
       keepassxc
       nixd
       nixfmt
+      obsidian
       pavucontrol
       ripgrep
       tree

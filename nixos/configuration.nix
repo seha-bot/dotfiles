@@ -111,6 +111,7 @@
     builtins.elem (lib.getName pkg) [
       "nvidia-settings"
       "nvidia-x11"
+      "obsidian"
     ];
 
   fonts.packages = [
