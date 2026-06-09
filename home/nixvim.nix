@@ -43,6 +43,8 @@
       foldlevelstart = 99;
 
       scrolloff = 5;
+
+      jumpoptions = "stack";
     };
 
     colorschemes.catppuccin = {

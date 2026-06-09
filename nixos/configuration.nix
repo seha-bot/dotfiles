@@ -74,7 +74,7 @@
           )
 
           (defalias
-            cesc (tap-hold-next 200 esc lsft)
+            cesc (tap-hold-next 150 esc lsft)
           )
 
           (deflayer base
