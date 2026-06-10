@@ -2,6 +2,11 @@
   programs.fish = {
     enable = true;
 
+    binds = {
+      "\\t".command = "if commandline --paging-mode; true; else; commandline -f complete; end";
+      right.command = "forward-char-passive";
+    };
+
     functions = {
       fish_prompt = ''
         set -l jobs (jobs | wc -l)

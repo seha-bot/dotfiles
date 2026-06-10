@@ -38,7 +38,7 @@
 
       number = true;
       relativenumber = true;
-      signcolumn = "number";
+      signcolumn = "yes:1";
 
       foldlevelstart = 99;
 
