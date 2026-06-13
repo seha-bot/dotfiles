@@ -5,7 +5,7 @@
     settings = {
       main = {
         term = "xterm-256color";
-        font = "monospace:pixelsize=20";
+        font = "DejaVuSansM Nerd Font Mono:pixelsize=20";
         line-height = "25px";
       };
 

@@ -115,9 +115,7 @@
     ];
 
   fonts.packages = [
-    pkgs.font-awesome
-    pkgs.nerd-fonts.sauce-code-pro
-    pkgs.nerd-fonts.symbols-only
+    pkgs.nerd-fonts.dejavu-sans-mono
     pkgs.noto-fonts
   ];
 
