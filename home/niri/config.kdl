@@ -279,3 +279,9 @@ output "Samsung Electric Company SAMSUNG 0x01000E00" {
     mode "1920x1080@50.000"
     position x=0 y=-1080
 }
+
+// room monitor
+output "PNP(AOC) 27G2G4 0x00024B09" {
+    mode "1920x1080@60.000"
+    position x=0 y=-1080
+}
