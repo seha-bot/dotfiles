@@ -42,10 +42,9 @@
       signcolumn = "yes:1";
 
       foldlevelstart = 99;
-
       scrolloff = 5;
-
       jumpoptions = "stack";
+      grepprg = "rg --vimgrep";
     };
 
     colorschemes.catppuccin = {
@@ -136,7 +135,13 @@
         enable = true;
 
         servers = {
-          clangd.enable = true;
+          clangd = {
+            enable = true;
+            cmd = [
+              "clangd"
+              "--background-index"
+            ];
+          };
           nixd.enable = true;
         };
 
