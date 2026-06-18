@@ -5,6 +5,7 @@
     binds = {
       "\\t".command = "if commandline --paging-mode; true; else; commandline -f complete; end";
       right.command = "forward-char-passive";
+      ctrl-f.command = "nextd-or-forward-word";
     };
 
     functions = {
