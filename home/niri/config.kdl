@@ -95,6 +95,10 @@ recent-windows {
     off
 }
 
+animations {
+    slowdown 0.8
+}
+
 binds {
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
