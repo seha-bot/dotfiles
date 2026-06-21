@@ -2,40 +2,40 @@
 
 {
   imports = [
-    ./fish.nix
-    ./foot.nix
+    ./fish.nix # shell
+    ./foot.nix # terminal emulator
     ./git.nix
-    ./niri
-    ./nixvim.nix
-    ./rofi.nix
-    ./waybar
-    ./yazi.nix
+    ./niri # wayland compositor
+    ./nixvim.nix # neovim wrapper for nix
+    ./rofi.nix # app opener
+    ./waybar # wayland status bar
+    ./yazi.nix # TUI file explorer
   ];
 
   home.packages = builtins.attrValues {
     inherit (pkgs)
-      bat
+      bat # cat, but bat
       brightnessctl
-      direnv
-      easyeffects
+      direnv # per-directory environments
+      easyeffects # TEMPORARILY HERE: can turn stereo sound into mono
       firefox
-      fzf
-      gitui
-      imv
-      keepassxc
-      nixd
-      nixfmt
-      obsidian
-      pavucontrol
-      ripgrep
-      tree
+      fzf # fuzzy finder
+      gitui # git ui
+      imv # image viewer
+      keepassxc # password manager
+      nixd # nix LSP
+      nixfmt # nix formatter
+      obsidian # notes app
+      pavucontrol # volume control
+      ripgrep # grep which ignores .gitignore and hidden files
       unzip
-      wdisplays
-      wl-clipboard
+      wdisplays # monitor setup tool for wayland
+      wl-clipboard # wayland clipboard utils
       ;
   };
 
   dconf.settings = {
+    # System-wide dark theme.
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
     };
