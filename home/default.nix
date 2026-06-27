@@ -9,7 +9,7 @@
     ./nixvim.nix # neovim wrapper for nix
     ./rofi.nix # app opener
     ./waybar # wayland status bar
-    ./yazi.nix # TUI file explorer
+    ./yazi.nix # TUI file manager
   ];
 
   home.packages = builtins.attrValues {

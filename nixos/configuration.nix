@@ -102,7 +102,10 @@
     nano.enable = false;
 
     # TODO: you won't need this once you setup niri correctly
-    niri.enable = true;
+    niri = {
+      enable = true;
+      useNautilus = false;
+    };
   };
 
   # TODO: this should be configured per user and per hostname
