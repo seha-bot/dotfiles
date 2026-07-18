@@ -14,6 +14,11 @@
     enable = true;
     nixpkgs.source = inputs.nixpkgs;
 
+    extraPackages = [
+      pkgs.nixd
+      pkgs.nixfmt
+    ];
+
     globals = {
       mapleader = " ";
       maplocalleader = " ";
@@ -53,83 +58,6 @@
     };
 
     plugins = {
-      dap = {
-        enable = true;
-        adapters = {
-          executables = {
-            lldb = {
-              command = "${pkgs.lldb}/bin/lldb-dap";
-            };
-            gdb = {
-              command = "${pkgs.gdb}/bin/gdb";
-              args = [
-                "--interpreter=dap"
-                "--eval-command"
-                "set print pretty on"
-              ];
-            };
-          };
-        };
-        configurations = {
-          cpp = [
-            {
-              type = "lldb";
-              request = "launch";
-              name = "Launch executable (LLDB)";
-              program.__raw = ''
-                function()
-                  return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-                end
-              '';
-              cwd = "\${workspaceFolder}";
-              stopOnEntry = false;
-              args.__raw = ''
-                function()
-                  local args_string = vim.fn.input('Arguments: ')
-                  return vim.split(args_string, " +")
-                end
-              '';
-            }
-            {
-              type = "gdb";
-              request = "launch";
-              name = "Launch executable (GDB)";
-              program.__raw = ''
-                function()
-                  return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-                end
-              '';
-              cwd = "\${workspaceFolder}";
-              stopOnEntry = false;
-              args.__raw = ''
-                function()
-                  local args_string = vim.fn.input('Arguments: ')
-                  return vim.split(args_string, " +")
-                end
-              '';
-            }
-          ];
-        };
-      };
-
-      # UI for dap.
-      dap-view = {
-        enable = true;
-        settings.winbar = {
-          sections = [
-            "watches"
-            "scopes"
-            "exceptions"
-            "breakpoints"
-            "threads"
-            "repl"
-            "console"
-          ];
-          controls = {
-            enabled = true;
-          };
-        };
-      };
 
       lsp = {
         enable = true;
@@ -151,7 +79,7 @@
           };
           lspBuf = {
             "<leader>a" = "code_action";
-            "<leader>f" = "format";
+            "<leader><leader>" = "format";
             "<leader>r" = "rename";
           };
         };
@@ -171,7 +99,7 @@
         enable = true;
         extensions.fzf-native.enable = true;
         keymaps = {
-          "<leader><leader>" = "find_files";
+          "<leader>f" = "find_files";
           "<leader>g" = "live_grep";
           "<leader>b" = "buffers";
           "<leader>h" = "help_tags";
@@ -225,16 +153,6 @@
         mode = "v";
         key = "<";
         action = "<gv";
-        options = {
-          noremap = true;
-          silent = true;
-        };
-      }
-      # dap-view panel
-      {
-        mode = "n";
-        key = "<leader>m";
-        action = ":DapViewToggle<CR>";
         options = {
           noremap = true;
           silent = true;

@@ -23,8 +23,6 @@
       gitui # git ui
       imv # image viewer
       keepassxc # password manager
-      nixd # nix LSP
-      nixfmt # nix formatter
       obsidian # notes app
       pavucontrol # volume control
       ripgrep # grep which ignores .gitignore and hidden files
