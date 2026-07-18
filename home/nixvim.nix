@@ -15,6 +15,7 @@
     nixpkgs.source = inputs.nixpkgs;
 
     extraPackages = [
+      pkgs.elmPackages.elm-format
       pkgs.nixd
       pkgs.nixfmt
     ];
@@ -70,7 +71,9 @@
               "--background-index"
             ];
           };
+          elmls.enable = true;
           nixd.enable = true;
+          pylsp.enable = true;
         };
 
         keymaps = {
@@ -117,11 +120,13 @@
         indent.enable = true;
         grammarPackages = with config.programs.nixvim.plugins.treesitter.package.builtGrammars; [
           cpp
+          elm
           bash
           json
           make
           markdown
           nix
+          python
           regex
           toml
           vim
