@@ -23,9 +23,13 @@
       gitui # git ui
       imv # image viewer
       keepassxc # password manager
+      mpv # media player
+      obs-studio # screen recorder
       obsidian # notes app
       pavucontrol # volume control
+      qbittorrent
       ripgrep # grep which ignores .gitignore and hidden files
+      tree # recursively list files
       unzip
       wdisplays # monitor setup tool for wayland
       wl-clipboard # wayland clipboard utils
