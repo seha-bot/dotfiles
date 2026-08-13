@@ -56,6 +56,7 @@
 
   services = {
     automatic-timezoned.enable = true;
+    blueman.enable = true;
 
     kmonad = {
       enable = true;
@@ -92,6 +93,14 @@
     # TODO: wait for https://github.com/NixOS/nixos-hardware/pull/1630
     tlp.enable = false;
     tuned.enable = true;
+  };
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+    # Shows battery charge of connected devices
+    # on supported bluetooth adapters.
+    settings.General.Experimental = true;
   };
 
   hardware.graphics.enable = true;
