@@ -24,6 +24,8 @@
       imv # image viewer
       keepassxc # password manager
       mpv # media player
+      nix-output-monitor # pretty build info
+      npins # nix dependency pinning
       obs-studio # screen recorder
       obsidian # notes app
       pavucontrol # volume control

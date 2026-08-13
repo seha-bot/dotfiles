@@ -1,18 +1,17 @@
 {
   config,
-  inputs,
+  nixvim,
   pkgs,
   ...
 }:
 
 {
   imports = [
-    inputs.nixvim.homeModules.nixvim
+    nixvim.homeModules.nixvim
   ];
 
   programs.nixvim = {
     enable = true;
-    nixpkgs.source = inputs.nixpkgs;
 
     extraPackages = [
       pkgs.elmPackages.elm-format
