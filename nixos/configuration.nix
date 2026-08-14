@@ -131,6 +131,5 @@
     pkgs.noto-fonts
   ];
 
-  nix.channel.enable = false;
   system.stateVersion = "26.05";
 }

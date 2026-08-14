@@ -12,6 +12,12 @@ import "${nixpkgs}/nixos" {
   specialArgs = { inherit user; };
   configuration = {
     imports = [
+      {
+        nix = {
+          nixPath = [ "nixpkgs=${nixpkgs}" ];
+          channel.enable = false;
+        };
+      }
       ./nixos/configuration.nix
       "${nixos-hardware}/lenovo/ideapad/15ach6"
       "${home-manager}/nixos"
