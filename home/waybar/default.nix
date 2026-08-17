@@ -57,7 +57,7 @@
         format-bluetooth-muted = "MUT {format_source}";
         format-muted = "MUT {format_source}";
         format-source = "";
-        format-source-muted = " ";
+        format-source-muted = "";
         on-click = "pavucontrol";
       };
       battery = {
