@@ -109,8 +109,6 @@
     bash.enable = false;
     fish.enable = true;
     nano.enable = false;
-
-    # TODO: you won't need this once you setup niri correctly
     niri = {
       enable = true;
       useNautilus = false;

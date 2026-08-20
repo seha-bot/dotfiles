@@ -5,7 +5,7 @@
     ./fish.nix # shell
     ./foot.nix # terminal emulator
     ./git.nix
-    ./niri # wayland compositor
+    ./niri.nix # wayland compositor
     ./nixvim.nix # neovim wrapper for nix
     ./rofi.nix # app opener
     ./waybar # wayland status bar
