@@ -16,6 +16,9 @@ import "${nixpkgs}/nixos" {
         nix = {
           nixPath = [ "nixpkgs=${nixpkgs}" ];
           channel.enable = false;
+          settings.experimental-features = [
+            "nix-command"
+          ];
         };
       }
       ./nixos/configuration.nix
