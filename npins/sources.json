@@ -9,9 +9,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "0668fdbc15bd602e463cab37ff64346021193652",
-      "url": "https://github.com/nix-community/home-manager/archive/0668fdbc15bd602e463cab37ff64346021193652.tar.gz",
-      "hash": "sha256-j1lYPT7YxOQc/G7NcJKqdpQ5/A5yX2aZdhVKkJR6cM4="
+      "revision": "7690127e7e1c90ab1dcaff525d0dafbeb7e14182",
+      "url": "https://github.com/nix-community/home-manager/archive/7690127e7e1c90ab1dcaff525d0dafbeb7e14182.tar.gz",
+      "hash": "sha256-jT6g5aWwA6TrIUJhqQ9ssm8W5e8vAl2Bv8gddEKKVNU="
     },
     "nixos-hardware": {
       "type": "Git",
@@ -22,16 +22,16 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "3e7edd9afe17e45521300e041c65de3015f4a302",
-      "url": "https://github.com/NixOS/nixos-hardware/archive/3e7edd9afe17e45521300e041c65de3015f4a302.tar.gz",
-      "hash": "sha256-8KuasCs+mVQ7WbLONUf/QB7NZeQvovyXRyxAj4nOOzY="
+      "revision": "0471accf8d0a8210b31d947497d179ecc99e0021",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/0471accf8d0a8210b31d947497d179ecc99e0021.tar.gz",
+      "hash": "sha256-HHfv2/HkNSKbbSyU9iD/g8lbP6r4tl33sSw1W4rXCk0="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1052792.044bfe75bfe4/nixexprs.tar.xz",
-      "hash": "sha256-Cwffw7dPM56d8spt4/queFQ1cKg69D9qrsp+wfwKvfo="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1061294.ac6b2166e7a9/nixexprs.tar.xz",
+      "hash": "sha256-ZEByVBPrWjUOLKInvr2aOGcy13/ObSLNEt/1o5ThyzA="
     },
     "nixvim": {
       "type": "Git",
@@ -42,9 +42,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "738351a7813be094fb00fce1a149bcc25e936c36",
-      "url": "https://github.com/nix-community/nixvim/archive/738351a7813be094fb00fce1a149bcc25e936c36.tar.gz",
-      "hash": "sha256-EVSCHLGozO2S4d14WianQ9JiU9tpPgdFv9uD74/xqeQ="
+      "revision": "ebec1ae277a50b16e7d6682edd009ef585d68261",
+      "url": "https://github.com/nix-community/nixvim/archive/ebec1ae277a50b16e7d6682edd009ef585d68261.tar.gz",
+      "hash": "sha256-CjeJTOjrluiDuL0W/YBFkSBOQjBYmdKwj7hWAJ4PIh0="
     }
   },
   "version": 8
