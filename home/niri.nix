@@ -387,6 +387,17 @@
             };
           };
         }
+        {
+          # home panasonic tv
+          output = {
+            _args = [ "Panasonic Industry Company Panasonic-TV 0x01010101" ];
+            mode = "1920x1080@60.000";
+            position._props = {
+              x = 0;
+              y = -1080;
+            };
+          };
+        }
       ];
     };
   };
