@@ -5,12 +5,14 @@ let
   nixos-hardware = sources.nixos-hardware;
   nixpkgs = sources.nixpkgs;
   nixvim = import sources.nixvim;
+  purescript-overlay = import sources.purescript-overlay;
 
   user = "seha";
 in
 import "${nixpkgs}/nixos" {
   specialArgs = { inherit user; };
   configuration = {
+    nixpkgs.overlays = [ purescript-overlay.overlays.default ];
     imports = [
       {
         nix = {

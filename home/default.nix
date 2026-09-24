@@ -5,6 +5,7 @@
     ./fish.nix # shell
     ./foot.nix # terminal emulator
     ./git.nix
+    ./helix.nix # text editor
     ./niri.nix # wayland compositor
     ./nixvim.nix # neovim wrapper for nix
     ./rofi.nix # app opener

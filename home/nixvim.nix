@@ -17,6 +17,7 @@
       pkgs.elmPackages.elm-format
       pkgs.nixd
       pkgs.nixfmt
+      pkgs.purs-tidy
     ];
 
     globals = {
@@ -68,10 +69,16 @@
             cmd = [
               "clangd"
               "--background-index"
+              "--experimental-modules-support"
             ];
           };
           elmls.enable = true;
           nixd.enable = true;
+          purescriptls = {
+            enable = true;
+            package = pkgs.purescript-language-server;
+            settings.purescript.addNpmPath = true;
+          };
           pylsp.enable = true;
         };
 
@@ -118,13 +125,14 @@
         highlight.enable = true;
         indent.enable = true;
         grammarPackages = with config.programs.nixvim.plugins.treesitter.package.builtGrammars; [
+          bash
           cpp
           elm
-          bash
           json
           make
           markdown
           nix
+          purescript
           python
           regex
           toml
