@@ -9,9 +9,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "7690127e7e1c90ab1dcaff525d0dafbeb7e14182",
-      "url": "https://github.com/nix-community/home-manager/archive/7690127e7e1c90ab1dcaff525d0dafbeb7e14182.tar.gz",
-      "hash": "sha256-jT6g5aWwA6TrIUJhqQ9ssm8W5e8vAl2Bv8gddEKKVNU="
+      "revision": "4900baf1e219645e4a2acba35723852b2091bc20",
+      "url": "https://github.com/nix-community/home-manager/archive/4900baf1e219645e4a2acba35723852b2091bc20.tar.gz",
+      "hash": "sha256-BOyZoliWfm/beS4m3FxFKlu5at6npZen1PsWtvzzihk="
     },
     "nixos-hardware": {
       "type": "Git",
@@ -22,16 +22,16 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "0471accf8d0a8210b31d947497d179ecc99e0021",
-      "url": "https://github.com/NixOS/nixos-hardware/archive/0471accf8d0a8210b31d947497d179ecc99e0021.tar.gz",
-      "hash": "sha256-HHfv2/HkNSKbbSyU9iD/g8lbP6r4tl33sSw1W4rXCk0="
+      "revision": "9ebcb7766700d7e006d9505247bd7ce0426f4232",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/9ebcb7766700d7e006d9505247bd7ce0426f4232.tar.gz",
+      "hash": "sha256-FIRXajv1pPZ+l6On6ekkmcQ6le0Zi0ncRUoR3nB0vKA="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1061294.ac6b2166e7a9/nixexprs.tar.xz",
-      "hash": "sha256-ZEByVBPrWjUOLKInvr2aOGcy13/ObSLNEt/1o5ThyzA="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1078625.00455b0a3690/nixexprs.tar.xz",
+      "hash": "sha256-rjHlujuny2I7z9j8P6RYRYyylenQX5/FXsYYUOK8ddY="
     },
     "nixvim": {
       "type": "Git",
@@ -42,9 +42,22 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "ebec1ae277a50b16e7d6682edd009ef585d68261",
-      "url": "https://github.com/nix-community/nixvim/archive/ebec1ae277a50b16e7d6682edd009ef585d68261.tar.gz",
-      "hash": "sha256-CjeJTOjrluiDuL0W/YBFkSBOQjBYmdKwj7hWAJ4PIh0="
+      "revision": "bcb5f577a36565bda07d7b81346b73cad8618d16",
+      "url": "https://github.com/nix-community/nixvim/archive/bcb5f577a36565bda07d7b81346b73cad8618d16.tar.gz",
+      "hash": "sha256-2lRgE8XsmXIVmiujmHVaCy5TrBUSblILNT5vYOj/Ed0="
+    },
+    "purescript-overlay": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "thomashoneyman",
+        "repo": "purescript-overlay"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "1cf88ab9d83596db0e0c0d304a16809c410e2917",
+      "url": "https://github.com/thomashoneyman/purescript-overlay/archive/1cf88ab9d83596db0e0c0d304a16809c410e2917.tar.gz",
+      "hash": "sha256-PwHYPpfLP+WjSwj765zJ1N0Xp4ET3+8vRqxJ031ua3M="
     }
   },
   "version": 8
