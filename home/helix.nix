@@ -14,7 +14,7 @@
 
     settings = {
       editor = {
-      auto-format = false;
+        auto-format = false;
         auto-pairs = false;
         soft-wrap.enable = true;
         whitespace.render = {
@@ -31,11 +31,14 @@
           "C-j" = "shrink_selection";
           "C-h" = "select_prev_sibling";
           "C-l" = "select_next_sibling";
-          "X" = "extend_line_above";
           "C-f" = ":format";
+          "X" = "extend_line_above";
+          "V" = "copy_selection_on_prev_line";
         };
         select = {
           "C-f" = "flip_selections";
+          "X" = "extend_line_above";
+          "V" = "copy_selection_on_prev_line";
         };
       };
       editor.cursor-shape.insert = "bar";
