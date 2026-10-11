@@ -50,8 +50,17 @@
   };
 
   networking = {
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      dns = "none";
+    };
     hostName = "ol-reliable";
+    nameservers = [
+      "8.8.8.8"
+      "1.1.1.1"
+      "8.8.4.4"
+      "1.0.0.1"
+    ];
   };
 
   services = {
