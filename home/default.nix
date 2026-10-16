@@ -32,6 +32,7 @@
       obsidian # notes app
       pavucontrol # volume control
       qbittorrent
+      retroarch-free
       ripgrep # grep which ignores .gitignore and hidden files
       tree # recursively list files
       unzip
