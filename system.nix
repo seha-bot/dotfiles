@@ -4,7 +4,6 @@ let
   home-manager = sources.home-manager;
   nixos-hardware = sources.nixos-hardware;
   nixpkgs = sources.nixpkgs;
-  nixvim = import sources.nixvim;
   purescript-overlay = import sources.purescript-overlay;
 
   user = "seha";
@@ -30,7 +29,6 @@ import "${nixpkgs}/nixos" {
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
-          extraSpecialArgs = { inherit nixvim; };
           users."${user}" = ./home;
         };
       }

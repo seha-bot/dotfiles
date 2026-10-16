@@ -33,19 +33,6 @@
       "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1078625.00455b0a3690/nixexprs.tar.xz",
       "hash": "sha256-rjHlujuny2I7z9j8P6RYRYyylenQX5/FXsYYUOK8ddY="
     },
-    "nixvim": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nix-community",
-        "repo": "nixvim"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "bcb5f577a36565bda07d7b81346b73cad8618d16",
-      "url": "https://github.com/nix-community/nixvim/archive/bcb5f577a36565bda07d7b81346b73cad8618d16.tar.gz",
-      "hash": "sha256-2lRgE8XsmXIVmiujmHVaCy5TrBUSblILNT5vYOj/Ed0="
-    },
     "purescript-overlay": {
       "type": "Git",
       "repository": {

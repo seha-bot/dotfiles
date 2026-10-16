@@ -7,7 +7,6 @@
     ./git.nix
     ./helix.nix # text editor
     ./niri.nix # wayland compositor
-    ./nixvim.nix # neovim wrapper for nix
     ./rofi.nix # app opener
     ./waybar # wayland status bar
     ./yazi.nix # TUI file manager
