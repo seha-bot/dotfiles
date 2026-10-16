@@ -3,6 +3,7 @@
 {
   home.packages = [
     pkgs.vanilla-dmz
+    pkgs.xwayland-satellite
   ];
 
   wayland.windowManager.niri = {

@@ -16,6 +16,7 @@
     inherit (pkgs)
       bat # cat, but bat
       brightnessctl
+      dbeaver-bin # database manager (temporary)
       direnv # per-directory environments
       easyeffects # TEMPORARILY HERE: can turn stereo sound into mono
       firefox
@@ -23,6 +24,7 @@
       gitui # git ui
       imv # image viewer
       keepassxc # password manager
+      logisim-evolution # digital circuit simulator (temporary)
       mpv # media player
       nix-output-monitor # pretty build info
       npins # nix dependency pinning
