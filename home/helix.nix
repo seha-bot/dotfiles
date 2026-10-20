@@ -5,11 +5,19 @@
     enable = true;
 
     extraPackages = [
+      # Nix.
       pkgs.nixd
       pkgs.nixfmt
-
+      # Purescript.
       pkgs.purescript-language-server
       pkgs.purs-tidy
+      # C++.
+      pkgs.clang-tools
+      # Java.
+      pkgs.jdt-language-server
+      # Haskell.
+      pkgs.haskell-language-server
+      pkgs.ormolu
     ];
 
     settings = {

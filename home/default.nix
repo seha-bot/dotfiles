@@ -12,34 +12,34 @@
     ./yazi.nix # TUI file manager
   ];
 
-  home.packages = builtins.attrValues {
-    inherit (pkgs)
-      bat # cat, but bat
-      brightnessctl
-      dbeaver-bin # database manager (temporary)
-      direnv # per-directory environments
-      easyeffects # TEMPORARILY HERE: can turn stereo sound into mono
-      firefox
-      fzf # fuzzy finder
-      gitui # git ui
-      imv # image viewer
-      keepassxc # password manager
-      logisim-evolution # digital circuit simulator (temporary)
-      mpv # media player
-      nix-output-monitor # pretty build info
-      npins # nix dependency pinning
-      obs-studio # screen recorder
-      obsidian # notes app
-      pavucontrol # volume control
-      qbittorrent
-      retroarch-free
-      ripgrep # grep which ignores .gitignore and hidden files
-      tree # recursively list files
-      unzip
-      wdisplays # monitor setup tool for wayland
-      wl-clipboard # wayland clipboard utils
-      ;
-  };
+  home.packages = with pkgs; [
+    bat # cat, but bat
+    brightnessctl
+    dbeaver-bin # database manager (temporary)
+    direnv # per-directory environments
+    easyeffects # TEMPORARILY HERE: can turn stereo sound into mono
+    firefox
+    fzf # fuzzy finder
+    ghc # haskell compiler
+    gitui # git ui
+    imv # image viewer
+    javaPackages.compiler.openjdk17
+    keepassxc # password manager
+    logisim-evolution # digital circuit simulator (temporary)
+    mpv # media player
+    nix-output-monitor # pretty build info
+    npins # nix dependency pinning
+    obs-studio # screen recorder
+    obsidian # notes app
+    pavucontrol # volume control
+    qbittorrent
+    retroarch-free
+    ripgrep # grep which ignores .gitignore and hidden files
+    tree # recursively list files
+    unzip
+    wdisplays # monitor setup tool for wayland
+    wl-clipboard # wayland clipboard utils
+  ];
 
   dconf.settings = {
     # System-wide dark theme.
