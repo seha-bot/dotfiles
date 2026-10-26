@@ -131,6 +131,7 @@
       "nvidia-settings"
       "nvidia-x11"
       "obsidian"
+      "stremio-linux-shell"
     ];
 
   fonts.packages = [

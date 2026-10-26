@@ -35,9 +35,11 @@
     qbittorrent
     retroarch-free
     ripgrep # grep which ignores .gitignore and hidden files
+    stremio-linux-shell # movies and tv shows
     tree # recursively list files
     unzip
     wdisplays # monitor setup tool for wayland
+    wine # windows compatibility layer
     wl-clipboard # wayland clipboard utils
   ];
 
