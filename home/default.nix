@@ -26,6 +26,7 @@
     imv # image viewer
     intellij-idea
     keepassxc # password manager
+    libreoffice-qt # FOR OPENING STUPID DOCUMENTS
     logisim-evolution # digital circuit simulator (temporary)
     mpv # media player
     nix-output-monitor # pretty build info
