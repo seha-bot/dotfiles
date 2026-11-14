@@ -15,6 +15,11 @@
         on = "j";
         run = "arrow 1";
       }
+      {
+        # dragon drag and drop
+        on = "<C-n>";
+        run = "shell -- dragon-drop -x -i -T %h";
+      }
     ];
   };
 }

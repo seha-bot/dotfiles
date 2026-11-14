@@ -18,6 +18,7 @@
     dbeaver-bin # database manager (temporary)
     direnv # per-directory environments
     easyeffects # TEMPORARILY HERE: can turn stereo sound into mono
+    dragon-drop # for drag and drop support
     firefox
     fzf # fuzzy finder
     ghc # haskell compiler
