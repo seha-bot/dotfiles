@@ -9,9 +9,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "c216bf5a1f173b0481bd5c8c489ebe5595ecc68c",
-      "url": "https://github.com/nix-community/home-manager/archive/c216bf5a1f173b0481bd5c8c489ebe5595ecc68c.tar.gz",
-      "hash": "sha256-/0tELNnhdSnP+bHSdWiEe6KpfSwi6WrTnT9cm/jNkjA="
+      "revision": "82ce401aa350502897c3f2e85f384d61cd3b0b6d",
+      "url": "https://github.com/nix-community/home-manager/archive/82ce401aa350502897c3f2e85f384d61cd3b0b6d.tar.gz",
+      "hash": "sha256-rkrJwLgLSHBnXfgoSKIDa+2LLGdTqynsV3GAxOTGhUU="
     },
     "nixos-hardware": {
       "type": "Git",
@@ -22,16 +22,16 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "1b418b8f203e49a92f250f8babdd19af1b6f7a7f",
-      "url": "https://github.com/NixOS/nixos-hardware/archive/1b418b8f203e49a92f250f8babdd19af1b6f7a7f.tar.gz",
-      "hash": "sha256-2UBK0jdmPANGaeAIoVOZY+hSPB2Gy13ZuZeSxP3vF8k="
+      "revision": "eb3c90bd715f7a9a28719bb014f53d309ccb2fc8",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/eb3c90bd715f7a9a28719bb014f53d309ccb2fc8.tar.gz",
+      "hash": "sha256-bUkc9dMpCFiJuuf5Efr7pnCDs5q18aA8zJah+MYZl9w="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1100667.674a2028661e/nixexprs.tar.xz",
-      "hash": "sha256-GNxqGToDYDZH2M4YeIj5nLPEyljtn3hEdIFY1/JNm0M="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1118975.2074cc672349/nixexprs.tar.xz",
+      "hash": "sha256-QG/HY0t5t3sfT2ozW/Ikis5Klqf0X4nfTuLvFaBpNno="
     },
     "purescript-overlay": {
       "type": "Git",
@@ -42,9 +42,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "8046182d2b23144cbb4370dabc5cc7b632bf7c02",
-      "url": "https://github.com/thomashoneyman/purescript-overlay/archive/8046182d2b23144cbb4370dabc5cc7b632bf7c02.tar.gz",
-      "hash": "sha256-nc2zRpoTCmbTnZ72jN3c2HVbfPKG9HapHamIMMDE7WU="
+      "revision": "d93462048bafd98a8d8aaf5249827348f7a7ef02",
+      "url": "https://github.com/thomashoneyman/purescript-overlay/archive/d93462048bafd98a8d8aaf5249827348f7a7ef02.tar.gz",
+      "hash": "sha256-nxOU1iu3dye3vSAsbqKRn9bez0agQ826AGcNoTPJ56E="
     }
   },
   "version": 8
