@@ -128,6 +128,7 @@
   nixpkgs.config.allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
+      "intellij-idea"
       "nvidia-settings"
       "nvidia-x11"
       "obsidian"

@@ -24,7 +24,7 @@
     ghc # haskell compiler
     gitui # git ui
     imv # image viewer
-    javaPackages.compiler.openjdk17
+    intellij-idea
     keepassxc # password manager
     logisim-evolution # digital circuit simulator (temporary)
     mpv # media player

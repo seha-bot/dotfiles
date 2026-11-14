@@ -13,8 +13,6 @@
       pkgs.purs-tidy
       # C++.
       pkgs.clang-tools
-      # Java.
-      pkgs.jdt-language-server
       # Haskell.
       pkgs.haskell-language-server
       pkgs.ormolu
